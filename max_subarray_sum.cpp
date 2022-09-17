@@ -12,11 +12,7 @@ int32_t main() {
     int ans = v[0];
     int cur = -1;
     for (int i = 0; i < n; i++) {
-        if (cur < 0) {
-            cur = v[i];
-        } else {
-            cur += v[i];
-        }
+        cur = max(cur + v[i], v[i]);
         ans = max(ans, cur);
     }
     cout << ans << endl;
