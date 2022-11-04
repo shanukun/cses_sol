@@ -11,7 +11,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> no;
 
-        auto it = s.upper_bound(no);
+        auto it = s.lower_bound(no);
 
         if (it == s.end() || *it == INT_MAX) {
             cnt++;
