@@ -14,8 +14,8 @@ int main() {
         cin >> a[i][0], a[i][1] = i + 1;
 
     sort(a, a + n);
+    int k = n - 1;
     for (int i = 0; i < n; ++i) {
-        int k = n - 1;
         for (int j = i + 1; j < n; ++j) {
             while (a[i][0] + a[j][0] + a[k][0] > x)
                 --k;
