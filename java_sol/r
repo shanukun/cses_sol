@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+function run_complied_binary() {
+    echo "Running"
+    echo "-------"
+    java $1 < in > out
+    cat out
+    rm "$1".class
+}
+
+function find_and_compile_java() {
+    last_modified_java_file=$(ls -t | grep ".*\.java" | head -1)
+    file_prefix=$(ls -t | grep ".*\.java" | head -1 | cut -d "." -f 1)
+    javac "$last_modified_java_file"
+    run_complied_binary "$file_prefix"
+}
+
+find_and_compile_java
