@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*; 
 
 public class CreateString {
-    static HashSet<String> hs;
+    static TreeSet<String> hs;
     static void perm(StringBuilder s, int ind) {
         hs.add(s.toString());
         if (ind >= s.length()) {
@@ -22,7 +22,7 @@ public class CreateString {
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
 
-        hs = new HashSet<>();
+        hs = new TreeSet<>();
         StringBuilder sb = new StringBuilder(s);
         perm(sb, 0);
         System.out.println(hs.size());

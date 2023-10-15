@@ -7,7 +7,7 @@ function run_complied_binary() {
     echo "-------"
     java $1 < in > out
     cat out
-    rm "$1".class
+    rm *.class
 }
 
 function find_and_compile_java() {
